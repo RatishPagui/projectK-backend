@@ -19,7 +19,7 @@ router.post('/bookings', async (req, res) => {
         const booking = new Booking(req.body);
         await booking.save();
 
-        const combinedMessage = `Booking Details:\nName: ${req.body.name}\nPhone: ${req.body.phone}\Date: ${req.body.date}\Time: ${req.body.time}\nMessage: ${req.body.message}`;
+        const combinedMessage = `Booking Details:\nName: ${req.body.name}\nPhone: ${req.body.phone}\Date: ${req.body.date}\nTime: ${req.body.time}\nMessage: ${req.body.message}`;
         
         const message = await client.messages.create({
             body: combinedMessage,
